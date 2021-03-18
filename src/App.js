@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import MultiStep from './components/multi-step/multi-step'
+import Address from './containers/address/address'
 import CreateUser from './containers/user/create-user/create-user'
-
-// Examples components
-const Hello = () => <div>Hello</div>
-const GoodBye = () => <div>GoodBye</div>
-const Happy = () => <div>Happy :)</div>
 
 function App () {
   const [errors, setErrors] = useState(false)
@@ -40,13 +36,7 @@ function App () {
             onClick: handleSubmit
           },
           {
-            component: <Hello />
-          },
-          {
-            component: <GoodBye />
-          },
-          {
-            component: <Happy />
+            component: <Address />
           }
         ]}
       />
