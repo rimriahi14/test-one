@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react'
-import Button from '../../components/button/button'
 import InputText from '../../components/form/input-text/input-text'
 
 const buildAddressForm = (address, addressFormRef) => {
@@ -66,7 +65,7 @@ const FormAddress = ({ address }) => {
           ref={(el) => (addressFormRef.current['postal_code'] = el)}
           name="postal_code"
         />
-        <Button>Valider</Button>
+        <button type="submit">Valide</button>
       </form>
     </div>
   )
