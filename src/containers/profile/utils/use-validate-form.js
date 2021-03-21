@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { isEqual } from 'lodash'
 
 const useValidateForm = (formRefs, handleErrors, errors) => {
-  // const [errors, setErrors] = useState({})
   const currentRef = formRefs.current
   return {
     firstName: () => {
@@ -13,7 +12,7 @@ const useValidateForm = (formRefs, handleErrors, errors) => {
       ) {
         currentRef['errors'] = {
           ...currentRef.errors,
-          firstName: true
+          firstName: true,
         }
         if (!isEqual(currentRef.errors, errors)) {
           handleErrors({ ...errors, firstName: true })
@@ -21,7 +20,7 @@ const useValidateForm = (formRefs, handleErrors, errors) => {
       } else {
         currentRef['errors'] = {
           ...currentRef.errors,
-          firstName: false
+          firstName: false,
         }
         if (!isEqual(currentRef.errors, errors)) {
           handleErrors({ ...errors, firstName: false })
@@ -37,7 +36,7 @@ const useValidateForm = (formRefs, handleErrors, errors) => {
       ) {
         currentRef['errors'] = {
           ...currentRef.errors,
-          lastName: true
+          lastName: true,
         }
         if (!isEqual(currentRef.errors, errors)) {
           handleErrors({ ...errors, lastName: true })
@@ -45,13 +44,13 @@ const useValidateForm = (formRefs, handleErrors, errors) => {
       } else {
         currentRef['errors'] = {
           ...currentRef.errors,
-          lastName: false
+          lastName: false,
         }
         if (!isEqual(currentRef.errors, errors)) {
           handleErrors({ ...errors, lastName: false })
         }
       }
-    }
+    },
   }
 }
 

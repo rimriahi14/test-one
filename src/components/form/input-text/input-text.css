@@ -1,3 +1,9 @@
 .error-input-text {
   border: 1px solid red;
 }
+input {
+  height: 25px;
+  width: 175px;
+  margin: 10px;
+  border-radius: 5px;
+}

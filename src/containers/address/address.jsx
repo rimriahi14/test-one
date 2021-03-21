@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import FormAddress from './FormAddress'
+import FormAddress from './form-address'
 
 export const GPlace = ({ updateAddress, initialAddress }) => {
   const placeInputRef = useRef({})
@@ -8,7 +8,6 @@ export const GPlace = ({ updateAddress, initialAddress }) => {
   // EFFECTS
   useEffect(() => {
     updateAddress(address)
-    console.log('hello', placeInputRef.current.value)
   }, [placeInputRef.current])
 
   useEffect(() => {
