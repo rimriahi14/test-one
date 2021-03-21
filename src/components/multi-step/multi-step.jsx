@@ -8,8 +8,6 @@ const MultiStep = ({ views }) => {
 
   const handleNextStep = () => {
     setStep(step + 1)
-    // à modifier
-    if (views[step].onClick) views[step].onClick()
   }
   const handlePrevStep = () => {
     setStep(step - 1)
@@ -44,9 +42,9 @@ MultiStep.propTypes = {
   views: PropTypes.arrayOf(
     PropTypes.shape({
       component: PropTypes.node.isRequired,
-      onClick: PropTypes.func
-    }).isRequired
-  )
+      onClick: PropTypes.func,
+    }).isRequired,
+  ),
 }
 MultiStep.defaultProps = {}
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import './input-text.css'
@@ -17,16 +17,16 @@ const InputText = React.forwardRef(
         />
       </div>
     )
-  }
+  },
 )
 
 InputText.propTypes = {
   label: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
 }
 InputText.defaultProps = {
   label: '',
-  type: 'text'
+  type: 'text',
 }
 
 export default InputText

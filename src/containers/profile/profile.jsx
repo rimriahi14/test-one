@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import InputText from '../../../components/form/input-text/input-text'
-import useValidateForm from './use-validate-form'
+import Button from '../../components/button/button'
+import InputText from '../../components/form/input-text/input-text'
+import useValidateForm from './utils/use-validate-form'
 
-const CreateUser = ({ handleErrors, handleSubmit, errors }) => {
+const Profile = ({ handleErrors, handleSubmit, errors }) => {
   const formRefs = useRef({})
   const validateForm = useValidateForm(formRefs, handleErrors, errors)
 
@@ -15,24 +16,24 @@ const CreateUser = ({ handleErrors, handleSubmit, errors }) => {
   return (
     <div>
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault()
           handleSubmit()
         }}
       >
         <InputText
-          label='Prénom'
-          name='firstName'
-          ref={el => (currentRef['firstName'] = el)}
+          label="Prénom"
+          name="firstName"
+          ref={(el) => (currentRef['firstName'] = el)}
           onBlur={() => validateForm.firstName()}
           error={currentRef && currentRef.errors && currentRef.errors.firstName}
           minLength={5}
           maxLength={20}
         />
         <InputText
-          label='Nom'
-          name='lastName'
-          ref={el => (currentRef['lastName'] = el)}
+          label="Nom"
+          name="lastName"
+          ref={(el) => (currentRef['lastName'] = el)}
           onBlur={() => validateForm.lastName()}
           error={currentRef && currentRef.errors && currentRef.errors.lastName}
           minLength={5}
@@ -43,4 +44,4 @@ const CreateUser = ({ handleErrors, handleSubmit, errors }) => {
   )
 }
 
-export default CreateUser
+export default Profile
